@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <>
       {data && <Nav data={data} />}
-      <Display />
+      <Display data={data.questions} />
     </>
   );
 };
