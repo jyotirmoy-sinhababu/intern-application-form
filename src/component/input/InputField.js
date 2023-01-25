@@ -1,6 +1,7 @@
 import React from 'react';
 
 const InputField = ({ data, count }) => {
+  console.log(count);
   if (data) {
     if (data[count]?.question_type == 4) {
       return (
