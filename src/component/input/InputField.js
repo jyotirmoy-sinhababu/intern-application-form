@@ -1,10 +1,11 @@
 import React from 'react';
 import './input.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const InputField = ({ data, count }) => {
   const [inputData, setInputData] = useState('');
+  const [isEnable, setIsEnable] = useState(false);
 
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -15,10 +16,19 @@ const InputField = ({ data, count }) => {
     localStorage.setItem('inputData', JSON.stringify(inputData));
   };
 
+  useEffect(() => {
+    const enableBtn = () => {
+      if ((count = 9)) {
+        setIsEnable(true);
+      }
+    };
+  }, []);
+
   console.log(inputData);
   if (data) {
     return (
       <form
+        className='input-form'
         onSubmit={(e) => {
           handleSubmit(e);
         }}
@@ -67,8 +77,8 @@ const InputField = ({ data, count }) => {
           <p>Loading...</p>
         )}
 
-        <div>
-          <button className='save-btn' type='submit'>
+        <div className='save-btn-cnt '>
+          <button disabled={isEnable} className='save-btn' type='submit'>
             Save
           </button>
         </div>

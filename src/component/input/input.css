@@ -1,3 +1,9 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
 .input-field {
   width: 250px;
   height: 40px;
@@ -25,4 +31,10 @@
   font-size: 1.2rem;
   border-radius: 20px;
   font-style: bold;
+}
+
+.save-btn-cnt {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 45px;
 }
