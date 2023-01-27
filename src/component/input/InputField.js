@@ -40,7 +40,7 @@ const InputField = ({ data, count }) => {
               return (
                 <div key={item.id}>
                   <input
-                    type='checkbox'
+                    type='radio'
                     required
                     name={item.choice_text}
                     className='input-checkbox'

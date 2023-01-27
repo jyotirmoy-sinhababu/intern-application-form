@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&display=swap');
+
+.dis-main-cnt {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 450px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  border-radius: 17px;
+}
+
+.dis-question-input-cnt {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 45px;
+  padding-top: 50px;
+  margin: 10px;
+}
+
+.dis-question {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: cadetblue;
+}
+
+.dis-btn-cnt {
+  display: flex;
+  flex-direction: row;
+  padding-left: 45px;
+  justify-content: space-between;
+  padding-right: 45px;
+  padding-top: 20px;
+  margin: 20px;
+}
+
+.dis-prev-btn,
+.dis-nxt-btn {
+  width: 55px;
+  height: 40px;
+  border-radius: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+}
+
+.dis-nxt-btn:hover {
+  color: green;
+  background-color: aqua;
+}
+
+.dis-prev-btn:hover {
+  color: green;
+  background-color: rgb(172, 246, 246);
+}

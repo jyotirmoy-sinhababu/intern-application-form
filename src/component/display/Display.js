@@ -1,4 +1,5 @@
 import React from 'react';
+import './display.css';
 
 import InputField from '../input/InputField';
 
@@ -17,12 +18,23 @@ const Display = ({ data }) => {
 
   return (
     <>
-      <p>{data ? data[count]?.question_text : null}</p>
-      <InputField data={data} count={count} />
-      <div>
-        <button onClick={decrementCount}>prev</button>
+      <div className='dis-main-cnt'>
+        <div className='dis-question-input-cnt'>
+          <p className='dis-question'>
+            {data ? data[count]?.question_text : null}
+          </p>
+          <InputField data={data} count={count} />
+        </div>
 
-        <button onClick={incrementCount}>next</button>
+        <div className='dis-btn-cnt'>
+          <button className='dis-prev-btn' onClick={decrementCount}>
+            prev
+          </button>
+
+          <button className='dis-nxt-btn' onClick={incrementCount}>
+            next
+          </button>
+        </div>
       </div>
     </>
   );

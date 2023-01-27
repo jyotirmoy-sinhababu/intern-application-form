@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './home.css';
+
 import { useState, useEffect } from 'react';
 
 import Display from '../../component/display/Display';
@@ -30,7 +32,9 @@ const Home = () => {
   return (
     <>
       {data && <Nav data={data} />}
-      <Display data={data.questions} />
+      <div className='home-dis-cnt'>
+        <Display data={data.questions} />
+      </div>
     </>
   );
 };

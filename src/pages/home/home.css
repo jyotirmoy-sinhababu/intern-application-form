@@ -1,0 +1,6 @@
+.home-dis-cnt {
+  display: flex;
+  padding-top: 80px;
+  justify-content: center;
+  align-items: center;
+}
