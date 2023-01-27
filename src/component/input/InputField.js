@@ -1,65 +1,58 @@
 import React from 'react';
 
-const InputField = ({ data, count, handleChange }) => {
+import { useState } from 'react';
+
+const InputField = ({ data, count }) => {
+  const [inputData, setInputData] = useState('');
+
+  const handleChange = (e) => {
+    setInputData({ ...inputData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   if (data) {
-    if (data[count]?.question_type == 4) {
-      return (
-        <>
-          <form>
-            <input
-              onChange={(e) => {
-                handleChange(e);
-              }}
-              type='text'
-              className='input-field'
-              name={data[count].question_text}
-            />
-          </form>
-        </>
-      );
-    } else if (
-      data[count]?.question_type == 1 ||
-      data[count]?.question_type == 2 ||
-      data[count]?.question_type == 2
-    ) {
-      return (
-        <>
-          {data[count]?.choices?.map((item) => {
-            return (
-              <>
-                <form key={item.id}>
+    return (
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+        }}
+      >
+        {data[count].question_type == 4 ? (
+          <input
+            type='text'
+            name={data[count].question_type}
+            className='input-field'
+          />
+        ) : data[count].question_type == 1 ||
+          data[count].question_type == 2 ||
+          data[count].question_type == 3 ? (
+          <div>
+            {data[count].choices.map((item) => {
+              return (
+                <div key={item.id}>
                   <input
-                    onChange={(e) => {
-                      handleChange(e);
-                    }}
                     type='checkbox'
-                    className='checkbox'
                     name={item.choice_text}
+                    className='input-checkbox'
                   />
-                  <label htmlFor={item.choice_text}>{item.choice_text}</label>
-                </form>
-              </>
-            );
-          })}
-        </>
-      );
-    } else if (data[count]?.question_type == 5) {
-      return (
-        <>
-          <form>
-            <label for='myfile'>Select a file:</label>
-            <input
-              onChange={(e) => {
-                handleChange(e);
-              }}
-              type='file'
-              className='file-input'
-              name={data.choice_text}
-            />
-          </form>
-        </>
-      );
-    }
+                  <label>{item.choice_text}</label>
+                </div>
+              );
+            })}
+          </div>
+        ) : (data[count].question_type = 5) ? (
+          <input type='file' name={data[count].question_type} />
+        ) : (
+          <p>Loading...</p>
+        )}
+        <div>
+          <button type='submit'>Save</button>
+        </div>
+      </form>
+    );
   }
 };
 
