@@ -38,3 +38,6 @@
   flex-direction: row-reverse;
   padding-right: 45px;
 }
+.save-btn:hover {
+  background-color: rgb(82, 243, 82);
+}

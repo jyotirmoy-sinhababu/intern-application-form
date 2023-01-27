@@ -22,7 +22,7 @@ const InputField = ({ data, count }) => {
         setIsEnable(true);
       }
     };
-  }, []);
+  }, [count]);
 
   console.log(inputData);
   if (data) {

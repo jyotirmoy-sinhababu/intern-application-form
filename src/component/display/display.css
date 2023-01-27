@@ -8,6 +8,7 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
   z-index: 1;
   border-radius: 17px;
+  background-color: rgb(184, 229, 229);
 }
 
 .dis-question-input-cnt {
@@ -48,10 +49,10 @@
 
 .dis-nxt-btn:hover {
   color: green;
-  background-color: aqua;
+  background-color: grey;
 }
 
 .dis-prev-btn:hover {
   color: green;
-  background-color: rgb(172, 246, 246);
+  background-color: grey;
 }
