@@ -16,6 +16,7 @@ const InputField = ({ data, count }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('inputData', JSON.stringify(inputData));
+    navigate('/msg');
   };
 
   useEffect(() => {
