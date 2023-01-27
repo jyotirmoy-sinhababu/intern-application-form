@@ -1,4 +1,5 @@
 import React from 'react';
+import './input.css';
 
 import { useState } from 'react';
 
@@ -43,7 +44,7 @@ const InputField = ({ data, count }) => {
                     type='radio'
                     required
                     name={item.choice_text}
-                    className='input-checkbox'
+                    className='input-radio'
                     onChange={(e) => {
                       handleChange(e);
                     }}
@@ -65,8 +66,11 @@ const InputField = ({ data, count }) => {
         ) : (
           <p>Loading...</p>
         )}
+
         <div>
-          <button type='submit'>Save</button>
+          <button className='save-btn' type='submit'>
+            Save
+          </button>
         </div>
       </form>
     );

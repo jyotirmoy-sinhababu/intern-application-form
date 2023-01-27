@@ -9,7 +9,9 @@ const Display = ({ data }) => {
   const [count, setCount] = useState(0);
 
   const incrementCount = () => {
-    setCount((prev) => prev + 1);
+    if (count < 9) {
+      setCount((prev) => prev + 1);
+    }
   };
 
   const decrementCount = () => {
