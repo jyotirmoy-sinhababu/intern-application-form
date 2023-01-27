@@ -1,11 +1,13 @@
 import React from 'react';
 import './input.css';
+import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 
 const InputField = ({ data, count }) => {
   const [inputData, setInputData] = useState('');
   const [isEnable, setIsEnable] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
