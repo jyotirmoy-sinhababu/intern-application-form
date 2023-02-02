@@ -7,15 +7,12 @@ import { useState } from 'react';
 
 const Display = ({ data }) => {
   const [count, setCount] = useState(0);
-  const [isEnable, setIsEnable] = useState(false);
 
   const incrementCount = () => {
     if (count < 9) {
       setCount((prev) => prev + 1);
     }
-    if ((count = 9)) {
-      setIsEnable(true);
-    }
+    
   };
 
   const decrementCount = () => {
@@ -29,7 +26,7 @@ const Display = ({ data }) => {
           <p className='dis-question'>
             {data ? data[count]?.question_text : null}
           </p>
-          <InputField data={data} count={count} isEnable={isEnable} />
+          <InputField data={data} count={count}  />
         </div>
 
         <div className='dis-btn-cnt'>

@@ -46,9 +46,7 @@ const InputField = ({ data, count }) => {
               handleChange(e);
             }}
           />
-        ) : data[count].question_type == 1 ||
-          data[count].question_type == 2 ||
-          data[count].question_type == 3 ? (
+        ) : data[count].question_type == 1 ? (
           <div>
             {data[count].choices.map((item) => {
               return (
@@ -56,7 +54,7 @@ const InputField = ({ data, count }) => {
                   <input
                     type='radio'
                     required
-                    name={item.choice_text}
+                    name={item.name}
                     className='input-radio'
                     onChange={(e) => {
                       handleChange(e);
@@ -67,7 +65,40 @@ const InputField = ({ data, count }) => {
               );
             })}
           </div>
-        ) : (data[count].question_type = 5) ? (
+        ) : data[count].question_type == 2 ? (
+          <select>
+            {data[count].choices.map((item) => {
+              return (
+                <optgroup key={item.id}>
+                  <option
+                    onChange={(e) => {
+                      handleChange(e);
+                    }}
+                  >
+                    {item.choice_text}
+                  </option>
+                </optgroup>
+              );
+            })}
+          </select>
+        ) : data[count].question_type == 3 ? (
+          <div>
+            {data[count].choices.map((item) => {
+              return (
+                <div key={item.id}>
+                  <input
+                    type='checkbox'
+                    name={item.choice_text}
+                    onChange={(e) => {
+                      handleChange(e);
+                    }}
+                  />
+                  <label>{item.choice_text}</label>
+                </div>
+              );
+            })}
+          </div>
+        ) : data[count].question_type == 5 ? (
           <input
             type='file'
             required

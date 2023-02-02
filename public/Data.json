@@ -19,9 +19,9 @@
       "question_type": 1,
       "required": 1,
       "choices": [
-        { "id": 777, "choice_text": "Male" },
-        { "id": 778, "choice_text": "Female" },
-        { "id": 779, "choice_text": "Other" }
+        { "id": 777, "choice_text": "Male", "name": "gender" },
+        { "id": 778, "choice_text": "Female", "name": "gender" },
+        { "id": 779, "choice_text": "Other", "name": "gender" }
       ]
     },
     {
@@ -30,9 +30,9 @@
       "question_type": 1,
       "required": 0,
       "choices": [
-        { "id": 780, "choice_text": "Work fromhome" },
-        { "id": 781, "choice_text": "Work in office" },
-        { "id": 782, "choice_text": "work in hybridway" }
+        { "id": 780, "choice_text": "Work fromhome", "name": "remote" },
+        { "id": 781, "choice_text": "Work in office", "name": "office" },
+        { "id": 782, "choice_text": "work in hybridway", "name": "hybrid" }
       ]
     },
     {
